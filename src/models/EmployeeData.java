@@ -8,13 +8,15 @@ import java.sql.SQLException;
  
 public class EmployeeData {
 
-   public void getEmployees(){
+   public ArrayList<Employee> getEmployees(){
+        ArrayList<Employee> empList = null;
         try {
-            tryGetEmployees();
+            empList = tryGetEmployees();
         } catch (SQLException e) {
             System.err.println("Hiba, Az SQL lekérés sikertelen");
             System.err.println(e.getMessage());
         }
+        return empList;
    }
    public ArrayList<Employee> tryGetEmployees() throws SQLException{
         Connection con = Mariadb.connectDB();

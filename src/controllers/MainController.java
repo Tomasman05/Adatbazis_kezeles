@@ -1,9 +1,9 @@
 package controllers;
 
-import models.EmployeeData;
+import views.Mainconsole;
 
 public class MainController {
     public MainController(){
-        new EmployeeData().getEmployees();
+        new Mainconsole();
     }
 }
